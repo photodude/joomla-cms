@@ -31,7 +31,7 @@ services:
 before_script:
   # Make sure all dev dependencies are installed
   - composer install
-  - composer global require "squizlabs/php_codesniffer=*"
+  - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
   # Set up databases for testing
   - mysql -e 'create database joomla_ut;'
