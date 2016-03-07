@@ -53,7 +53,7 @@ before_script:
 script:
   #- libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
-  - phpcs --standard=build/phpcs2 
+  - phpcs --report=full --extensions=php -p --standard=build/phpcs2/Joomla 
 branches:
   except:
     - 2.5.x
