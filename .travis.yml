@@ -33,6 +33,7 @@ before_script:
   - composer install
   - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
+  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git build/phpcspd
   - git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git build/phpcs2
   # Set up databases for testing
   - mysql -e 'create database joomla_ut;'
@@ -55,7 +56,8 @@ script:
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
   # list all files in the directory to hunt file missing errors
   #- ls -alR build/phpcs2/src
-  - phpcs --report=full --extensions=php -p --standard=build/phpcs2/src/Joomla 
+  - phpcs --standard=build/phpcspd/Joomla 
+  - phpcs --standard=build/phpcs2/src/Joomla 
 branches:
   except:
     - 2.5.x
