@@ -56,8 +56,8 @@ script:
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
   # list all files in the directory to hunt file missing errors
   #- ls -alR build/phpcs2/src
-  - phpcs --standard=build/phpcspd/Joomla 
-  - phpcs --standard=build/phpcs2/src/Joomla 
+  - phpcs --standard=build/phpcspd/Joomla administrator
+  - phpcs --standard=build/phpcs2/src/Joomla administrator 
 branches:
   except:
     - 2.5.x
