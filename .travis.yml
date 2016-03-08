@@ -58,7 +58,7 @@ script:
   #- ls -alR ./vendor/bin/phpcs
   #- phpcs -i
   #- phpcs --standard=Joomla
-  - phpcs --standard=build/phpcs2/src/Joomla/ruleset.xml
+  - phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
 branches:
   except:
     - 2.5.x
