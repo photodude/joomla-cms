@@ -33,8 +33,8 @@ before_script:
   - composer install
   - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
-  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git phpenv/PHP/CodeSniffer/Standards/
-  #- git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git build/phpcs2
+  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $TRAVIS_BUILD_DIR
+  - git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $PHPCS_DIR
   # Set up databases for testing
   - mysql -e 'create database joomla_ut;'
   - mysql joomla_ut < tests/unit/schema/mysql.sql
@@ -55,7 +55,8 @@ script:
   #- libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
   # list all files in the directory to hunt file missing errors
-  #- ls -alR ./vendor/bin/phpcs
+  - ls -alR $TRAVIS_BUILD_DIR
+  - ls -alR $PHPCS_DIR
   - phpcs -i
   #- phpcs --standard=Joomla
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
