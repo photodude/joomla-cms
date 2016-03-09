@@ -32,9 +32,9 @@ before_script:
   # Make sure all dev dependencies are installed
   - composer install
   - pear config-set auto_discover 1
+  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
   - pear install PHP_CodeSniffer
   - phpenv rehash
-  - git clone -b phpcs-2 -l -s -n https://github.com/photodude/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
   #- git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $PHPCS_DIR
   # Set up databases for testing
   - mysql -e 'create database joomla_ut;'
