@@ -33,9 +33,9 @@ before_script:
   - composer install
   - pear config-set auto_discover 1
   - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
+  #- git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
   - pear install PHP_CodeSniffer
   - phpenv rehash
-  #- git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $PHPCS_DIR
   # Set up databases for testing
   - mysql -e 'create database joomla_ut;'
   - mysql joomla_ut < tests/unit/schema/mysql.sql
@@ -57,9 +57,8 @@ script:
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
   # list all files in the directory to hunt file missing errors
   #- ls -alR $(pear config-get php_dir)
-  #- ls -alR $PHPCS_DIR
-  - phpcs -i
-  #- phpcs --standard=Joomla
+  #- phpcs -i
+  - phpcs --standard=Joomla
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
 branches:
   except:
