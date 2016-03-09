@@ -58,7 +58,7 @@ script:
   # list all files in the directory to hunt file missing errors
   #- ls -alR $(pear config-get php_dir)
   - phpcs -i
-  - phpcs --standard=Joomla
+  - phpcs --standard=Joomla /
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
 branches:
   except:
