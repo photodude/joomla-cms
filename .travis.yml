@@ -33,7 +33,7 @@ before_script:
   - composer install
   - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
-  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $TRAVIS_BUILD_DIR
+  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git TRAVIS_BUILD_DIR
   - git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $PHPCS_DIR
   # Set up databases for testing
   - mysql -e 'create database joomla_ut;'
