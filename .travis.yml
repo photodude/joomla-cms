@@ -56,7 +56,7 @@ script:
   #- libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
   # list all files in the directory to hunt file missing errors
-  - ls -alR $(pear config-get php_dir)
+  #- ls -alR $(pear config-get php_dir)
   #- ls -alR $PHPCS_DIR
   - phpcs -i
   #- phpcs --standard=Joomla
