@@ -67,8 +67,8 @@ script:
   #- phpcs --report=full --colors -p --standard=PSR1 $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p --standard=PHPCS $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p --standard=PEAR $TRAVIS_BUILD_DIR
-  - phpcs --report=full --colors -p --standard=MySource $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=Joomla $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p --standard=MySource $TRAVIS_BUILD_DIR
+  - phpcs --report=full --colors -p --standard=Joomla $TRAVIS_BUILD_DIR
 
 
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
