@@ -32,8 +32,8 @@ before_script:
   # Make sure all dev dependencies are installed
   - composer install
   - pear config-set auto_discover 1
-  #- git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
-  - git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
+  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
+  #- git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
   - pear install PHP_CodeSniffer
   - phpenv rehash
   # Set up databases for testing
@@ -59,7 +59,7 @@ script:
   #- ls -alR $(pear config-get php_dir)
   - phpcs -i
   - phpcs --config-set show_progress 1
-  - phpcs -p --report=full --standard=Joomla $TRAVIS_BUILD_DIR
+  - phpcs --report=full --colors --extensions=php -p --standard=Joomla $TRAVIS_BUILD_DIR
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
 branches:
   except:
