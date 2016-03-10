@@ -60,7 +60,7 @@ script:
   - phpcs -i
   - phpcs --config-set show_progress 1
   #- phpcs --report=full --colors --extensions=php -p --standard=Joomla $TRAVIS_BUILD_DIR
-  - phpcs --report=full --colors --extensions=php -p --standard=PEAR $TRAVIS_BUILD_DIR
+  - phpcs --report=full --colors -p --standard=PEAR $TRAVIS_BUILD_DIR
 
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
 branches:
