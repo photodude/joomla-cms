@@ -62,8 +62,8 @@ script:
   - phpcs --config-set show_progress 1
   #- phpcs --report=full --colors --extensions=php -p --standard=Joomla $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p --standard=Zend $TRAVIS_BUILD_DIR
-  - phpcs --report=full --colors -p --standard=Squiz $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=PSR2 $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p --standard=Squiz $TRAVIS_BUILD_DIR
+  - phpcs --report=full --colors -p --standard=PSR2 $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p --standard=PSR1 $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p --standard=PHPCS $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p --standard=PEAR $TRAVIS_BUILD_DIR
