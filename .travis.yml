@@ -57,7 +57,7 @@ script:
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
   # list all files in the directory to hunt file missing errors
   #- ls -alR $(pear config-get php_dir)
-  - phpcs -i
+  - phpcs -i --version
   - phpcs --config-set show_progress 1
   #- phpcs --report=full --colors --extensions=php -p --standard=Joomla $TRAVIS_BUILD_DIR
   - phpcs --report=full --colors -p --standard=PEAR $TRAVIS_BUILD_DIR
