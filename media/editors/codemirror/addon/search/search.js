@@ -128,7 +128,7 @@
           if (to.line < 3 && document.querySelector &&
               (dialog = cm.display.wrapper.querySelector(".CodeMirror-dialog")) &&
               dialog.getBoundingClientRect().bottom - 4 > cm.cursorCoords(to, "window").top)
-            (hiding = dialog).style.opacity = .4
+            (hiding = dialog).style.opacity = 0.4
         })
       });
     } else {
