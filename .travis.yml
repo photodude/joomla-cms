@@ -68,7 +68,7 @@ script:
   #- phpcs --report=full --colors -p -v --standard=PHPCS $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p -v --standard=PEAR $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p -v --standard=MySource $TRAVIS_BUILD_DIR
-  - phpcs --report=summary --colors -p -v --standard=Joomla --ignore=/home/travis/build/photodude/joomla-cms/administrator/components/com_joomlaupdate
+  - phpcs --report=summary --colors -p -v --standard=Joomla --ignore=home/travis/build/photodude/joomla-cms/administrator/components/com_joomlaupdate
 Processing restore.php $TRAVIS_BUILD_DIR
 
 
