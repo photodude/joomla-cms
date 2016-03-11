@@ -73,7 +73,7 @@ script:
   #- php scripts/phpcs --report=full --colors -p -v --standard=PHPCS $TRAVIS_BUILD_DIR
   #- php scripts/phpcs --report=full --colors -p -v --standard=PEAR $TRAVIS_BUILD_DIR
   #- php scripts/phpcs --report=full --colors -p -v --standard=MySource $TRAVIS_BUILD_DIR
-  - php scripts/phpcs --report=summary --colors -p -v --standard=Joomla $TRAVIS_BUILD_DIR
+  - php scripts/phpcs --report=summary --colors -p --standard=Joomla $TRAVIS_BUILD_DIR
 
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
 branches:
