@@ -64,7 +64,7 @@ script:
   - php scripts/phpcs -i 
   - php scripts/phpcs --version
   - php scripts/phpcs --config-set show_progress 1
-  - php scripts/phpcs --report=full --colors -p --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/* $TRAVIS_BUILD_DIR
+  - php scripts/phpcs --report=full --colors -p --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/* $TRAVIS_BUILD_DIR
 
 branches:
   except:
