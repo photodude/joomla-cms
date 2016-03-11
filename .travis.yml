@@ -59,10 +59,9 @@ script:
   # list all files in the directory to hunt file missing errors
   #- ls -alR $(pear config-get php_dir)
   - cd PHP_CodeSniffer
-  - php scripts/phpcs -h
-  - phpcs -i 
-  - phpcs --version
-  - phpcs --config-set show_progress 1
+  - php scripts/phpcs -i 
+  - php scripts/phpcs --version
+  - php scripts/phpcs --config-set show_progress 1
   #- phpcs --report=full --colors -v --extensions=php -p --standard=Joomla $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p -v --standard=Zend $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p -v --standard=Squiz $TRAVIS_BUILD_DIR
