@@ -32,9 +32,10 @@ before_script:
   # Make sure all dev dependencies are installed
   - composer install
   - pear config-set auto_discover 1
-  - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
+  #- git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
   #- git clone -b joomla-cs2 https://github.com/GreenCape/coding-standards.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/
-  - pear install PHP_CodeSniffer
+  - git clone -b master git://github.com/squizlabs/PHP_CodeSniffer.git $(pear config-get php_dir)/PHP/CodeSniffer/
+  #- pear install PHP_CodeSniffer
   - phpenv rehash
   # Set up databases for testing
   - mysql -e 'create database joomla_ut;'
@@ -68,7 +69,7 @@ script:
   #- phpcs --report=full --colors -p -v --standard=PHPCS $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p -v --standard=PEAR $TRAVIS_BUILD_DIR
   #- phpcs --report=full --colors -p -v --standard=MySource $TRAVIS_BUILD_DIR
-  - phpcs --report=summary --colors -p -v --standard=Joomla --ignore=home/travis/build/photodude/joomla-cms/administrator/components/com_joomlaupdate/restore.php, home/travis/build/photodude/joomla-cms/libraries/joomla/form/rule/url.php $TRAVIS_BUILD_DIR
+  #- phpcs --report=summary --colors -p -v --standard=Joomla --ignore=home/travis/build/photodude/joomla-cms/administrator/components/com_joomlaupdate/restore.php, home/travis/build/photodude/joomla-cms/libraries/joomla/form/rule/url.php $TRAVIS_BUILD_DIR
 
 
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
