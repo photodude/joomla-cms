@@ -60,15 +60,15 @@ script:
   - phpcs -i 
   - phpcs --version
   - phpcs --config-set show_progress 1
-  #- phpcs --report=full --colors --extensions=php -p --standard=Joomla $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=Zend $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=Squiz $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=PSR2 $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=PSR1 $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=PHPCS $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=PEAR $TRAVIS_BUILD_DIR
-  #- phpcs --report=full --colors -p --standard=MySource $TRAVIS_BUILD_DIR
-  - phpcs --report=summary --colors -p --standard=Joomla $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -v --extensions=php -p --standard=Joomla $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p -v --standard=Zend $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p -v --standard=Squiz $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p -v --standard=PSR2 $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p -v --standard=PSR1 $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p -v --standard=PHPCS $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p -v --standard=PEAR $TRAVIS_BUILD_DIR
+  #- phpcs --report=full --colors -p -v --standard=MySource $TRAVIS_BUILD_DIR
+  - phpcs --report=summary --colors -p -v -d memory_limit=256M --standard=Joomla $TRAVIS_BUILD_DIR
 
 
   #- phpcs -p --report=full --standard=build/phpcs2/src/Joomla/ruleset.xml
