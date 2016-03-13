@@ -65,7 +65,7 @@ script:
   - php scripts/phpcs --version
   - php scripts/phpcs --config-set show_progress 1
   - php scripts/phpcs --config-set report_width 150
-  - php scritps/phpcs --config-set encoding utf-8
+  - php scripts/phpcs --config-set encoding utf-8
   - php scripts/phpcs --report=full --colors -p -s --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/*,*/templates/*,*/tmpl/*,*/layouts/* $TRAVIS_BUILD_DIR
 
 branches:
