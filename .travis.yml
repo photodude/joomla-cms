@@ -79,13 +79,13 @@ script:
   #- if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
   # list all files in the directory to hunt file missing errors
   #- ls -alR $(pear config-get php_dir)
-  - cd PHP_CodeSniffer
-  - php scripts/phpcs -i 
-  - php scripts/phpcs --version
-  - php scripts/phpcs --config-set show_progress 1
-  - php scripts/phpcs --config-set report_width 150
-  - php scripts/phpcs --config-set encoding utf-8
-  - php scripts/phpcs --report=full --colors -p -s --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/*,*/templates/*,*/tmpl/*,*/layouts/* $TRAVIS_BUILD_DIR
+  - if [[ $RUN_PHPCS == "yes" ]]; then cd PHP_CodeSniffer; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs -i; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs --version; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs --config-set show_progress 1; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs --config-set report_width 150; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs --config-set encoding utf-8; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs --report=full --colors -p -s --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/*,*/templates/*,*/tmpl/*,*/layouts/* $TRAVIS_BUILD_DIR; fi
 
 branches:
   except:
