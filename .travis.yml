@@ -58,6 +58,7 @@ services:
 
 before_script:
   - git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $TRAVIS_PHP_VERSION/PHP/CodeSniffer/Standards/
+  - ls -alR $TRAVIS_PHP_VERSION/PHP/CodeSniffer/Standards/
   - mv $TRAVIS_PHP_VERSION/PHP/CodeSniffer/Standards/Joomla PHP_CodeSniffer/CodeSniffer/Standards/
   # JavaScript tests
   - if [[ $RUN_JAVASCRIPT_TESTS == "yes" ]]; then export DISPLAY=:99.0; bash build/travis/javascript-tests.sh $PWD; fi
