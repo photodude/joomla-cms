@@ -19,6 +19,7 @@ composer install
 git clone -b phpcs-2 https://github.com/photodude/coding-standards.git $TRAVIS_PHP_VERSION/PHP/CodeSniffer/Standards/
 git clone -b master git://github.com/squizlabs/PHP_CodeSniffer.git
 mv $TRAVIS_PHP_VERSION/PHP/CodeSniffer/Standards/Joomla PHP_CodeSniffer/CodeSniffer/Standards/
+mv $BASE/build/phpcs/Joomla-CMS PHP_CodeSniffer/CodeSniffer/Standards/
 
 # Setup databases for testing
 mysql -u root -e 'create database joomla_ut;'
