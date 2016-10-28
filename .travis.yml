@@ -63,7 +63,10 @@ before_script:
   - if [[ ( $RUN_UNIT_TESTS == "yes" ) || ( $RUN_PHPCS == "yes" ) ]]; then bash build/travis/unit-tests.sh $PWD; fi
 
 script:
-  - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --report=full --extensions=php -p --standard=build/phpcs/Joomla .; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then cd PHP_CodeSniffer; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs -i; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs --version; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php scripts/phpcs --report=full --colors -ps --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/*,*/templates/*,*/tmpl/*,*/layouts/* $TRAVIS_BUILD_DIR; fi
   - if [[ $RUN_UNIT_TESTS == "yes" ]]; then libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml; fi
   - if [[ $RUN_JAVASCRIPT_TESTS == "yes" ]]; then tests/javascript/node_modules/karma/bin/karma start karma.conf.js --single-run ; fi
 
