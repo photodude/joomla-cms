@@ -17,6 +17,7 @@
     <!-- Exclude 3rd party libraries. --> 
     <exclude-pattern>*/libraries/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/PHP_CodeSniffer/*</exclude-pattern>
      <!-- <exclude-pattern>*/editors/*</exclude-pattern>-->
 
     <!-- Exclude rules that have current B/C considerations. -->
