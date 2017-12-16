@@ -51,8 +51,7 @@ script:
 #  - if [[ $RUN_UNIT_TESTS == "yes" ]]; then libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml; fi
   # list all files in the directory to hunt file missing errors
   #- ls -alR $(pear config-get php_dir)
-  - ls -alR libraries/vendor/bin/phpcs
-  - ls -alR libraries/vendor/
+  - ls -alR libraries/vendor/composer
 
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/bin/joomla/coding-standards/; fi
 #  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/bin/joomla/coding-standards/ExampleRulesets/Joomla-CMS; fi
