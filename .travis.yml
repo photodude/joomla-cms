@@ -55,7 +55,7 @@ script:
   #- ls -alR $(pear config-get php_dir)
 #  - ls -alR libraries/vendor/joomla
 
-  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/joomla/coding-standards/, libraries/vendor/joomla/coding-standards/ExampleRulesets/; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/joomla/coding-standards,libraries/vendor/joomla/coding-standards/Joomla/ExampleRulesets; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -i; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --version; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --report=full --colors -ps --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/*,*/templates/*,*/tmpl/*,*/layouts/* $TRAVIS_BUILD_DIR; fi
