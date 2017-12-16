@@ -46,8 +46,8 @@ services:
 before_script:
   # Make sure all dev dependencies are installed
   - if [[ $RUN_UNIT_TESTS == "yes" ]]; then bash build/travis/unit-tests.sh $PWD; fi
-  - mv libraries/vendor/joomla/coding-standards/ExampleRulesets/Joomla-CMS PHP_CodeSniffer/CodeSniffer/Standards/
-  - mv libraries/vendor/joomla/coding-standards/ PHP_CodeSniffer/CodeSniffer/Standards/
+  - mv $TRAVIS_BUILD_DIR/libraries/vendor/joomla/coding-standards/ExampleRulesets/Joomla-CMS PHP_CodeSniffer/CodeSniffer/Standards/
+  - mv $TRAVIS_BUILD_DIR/libraries/vendor/joomla/coding-standards/ PHP_CodeSniffer/CodeSniffer/Standards/
 
 script:
 #  - if [[ $RUN_UNIT_TESTS == "yes" ]]; then libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml; fi
