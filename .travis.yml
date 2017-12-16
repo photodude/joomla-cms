@@ -53,7 +53,7 @@ script:
   #- ls -alR $(pear config-get php_dir)
   - ls -alR libraries/vendor/bin/
 
-- if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/bin/joomla/coding-standards/; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/bin/joomla/coding-standards/; fi
 #  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/bin/joomla/coding-standards/ExampleRulesets/Joomla-CMS; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -i; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --version; fi
