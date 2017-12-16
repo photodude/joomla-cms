@@ -52,13 +52,13 @@ script:
   # list all files in the directory to hunt file missing errors
   #- ls -alR $(pear config-get php_dir)
 #  - if [[ $RUN_PHPCS == "yes" ]]; then cd PHP_CodeSniffer; fi
-#  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs -h --config-set installed_paths /path/to/Joomla-CMS
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs -h -i; fi
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs -h --version; fi
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs -h --config-set show_progress 1; fi
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs -h --config-set report_width 150; fi
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs -h --config-set encoding utf-8; fi
-  - if [[ $RUN_PHPCS == "yes" ]]; then vendor/bin/phpcs -h --report=full --colors -ps --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/*,*/templates/*,*/tmpl/*,*/layouts/* $TRAVIS_BUILD_DIR; fi
+#  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -h --config-set installed_paths /path/to/Joomla-CMS
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -h -i; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -h --version; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -h --config-set show_progress 1; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -h --config-set report_width 150; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -h --config-set encoding utf-8; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -h --report=full --colors -ps --standard=Joomla --ignore=*/PHP_CodeSniffer/*,*/vendor/*,*/libraries/*,*/editors/*,*/lib/*,*/templates/*,*/tmpl/*,*/layouts/* $TRAVIS_BUILD_DIR; fi
 
 
 branches:
