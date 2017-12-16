@@ -46,8 +46,8 @@ services:
 before_script:
   # Make sure all dev dependencies are installed
   - if [[ $RUN_UNIT_TESTS == "yes" ]]; then bash build/travis/unit-tests.sh $PWD; fi
-  - mv $TRAVIS_BUILD_DIR/libraries/vendor/joomla/coding-standards/ExampleRulesets/Joomla-CMS PHP_CodeSniffer/CodeSniffer/Standards/
-  - mv $TRAVIS_BUILD_DIR/libraries/vendor/joomla/coding-standards/ PHP_CodeSniffer/CodeSniffer/Standards/
+#  - mv $TRAVIS_BUILD_DIR/libraries/vendor/joomla/coding-standards/ExampleRulesets/Joomla-CMS PHP_CodeSniffer/CodeSniffer/Standards/
+#  - mv $TRAVIS_BUILD_DIR/libraries/vendor/joomla/coding-standards/ PHP_CodeSniffer/CodeSniffer/Standards/
 
 script:
 #  - if [[ $RUN_UNIT_TESTS == "yes" ]]; then libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml; fi
@@ -55,7 +55,7 @@ script:
   #- ls -alR $(pear config-get php_dir)
 #  - ls -alR libraries/vendor/joomla
 
-#  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/joomla/coding-standards/; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/joomla/coding-standards/; fi
 #  - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/joomla/coding-standards/ExampleRulesets/Joomla-CMS; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs -i; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then php libraries/vendor/bin/phpcs --version; fi
