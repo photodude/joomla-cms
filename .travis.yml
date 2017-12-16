@@ -47,12 +47,15 @@ before_script:
   # Make sure all dev dependencies are installed
   - if [[ $RUN_UNIT_TESTS == "yes" ]]; then bash build/travis/unit-tests.sh $PWD; fi
 
+
 script:
 #  - if [[ $RUN_UNIT_TESTS == "yes" ]]; then libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml; fi
+
   - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/joomla/coding-standards,build/phpcs/; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs -i; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --version; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --standard=JoomlaCMS --extensions=php $TRAVIS_BUILD_DIR; fi
+
 
 branches:
   except:
