@@ -4,7 +4,6 @@
     <arg name="report" value="full"/>
     <arg name="tab-width" value="4"/>
     <arg name="encoding" value="utf-8"/>
-    <arg value="sp"/>
     <arg name="colors" />
 
     <!-- Exclude folders not containing production code -->
