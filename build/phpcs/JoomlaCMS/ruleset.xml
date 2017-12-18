@@ -1,22 +1,50 @@
 <?xml version="1.0"?>
-<ruleset name="JoomlaCMS">
+<ruleset name="Joomla-CMS">
 
     <arg name="report" value="full"/>
     <arg name="tab-width" value="4"/>
     <arg name="encoding" value="utf-8"/>
-    <arg name="colors" />
+    <arg value="sp"/>
 
     <!-- Exclude folders not containing production code -->
     <exclude-pattern>*/build/*</exclude-pattern>
-    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern type="relative">docs/*</exclude-pattern>
+    <exclude-pattern type="relative">cache/*</exclude-pattern>
+    <exclude-pattern type="relative">tmp/*</exclude-pattern>
+    <exclude-pattern type="relative">logs/*</exclude-pattern>
     <exclude-pattern>*/lib/*</exclude-pattern>
     <exclude-pattern>*/tmpl/*</exclude-pattern>
     <exclude-pattern>*/layouts/*</exclude-pattern>
 
-    <!-- Exclude 3rd party libraries. -->
-    <exclude-pattern>*/libraries/*</exclude-pattern>
-    <exclude-pattern>*/vendor/*</exclude-pattern>
-    <exclude-pattern>*/editors/*</exclude-pattern>
+    <!-- Exclude 3rd party libraries and Framework code. -->
+    <exclude-pattern type="relative">libraries/compat/password/*</exclude-pattern>
+    <exclude-pattern type="relative">libraries/fof/*</exclude-pattern>
+    <exclude-pattern type="relative">libraries/idna_convert/*</exclude-pattern>
+    <exclude-pattern type="relative">libraries/php-encryption/*</exclude-pattern>
+    <exclude-pattern type="relative">libraries/phputf8/*</exclude-pattern>
+    <exclude-pattern type="relative">libraries/simplepie/*</exclude-pattern>
+    <exclude-pattern type="relative">libraries/phpass/*</exclude-pattern>
+    <exclude-pattern type="relative">libraries/vendor/*</exclude-pattern>
+    <!-- Exclude the restore_finalisation until we can deal with nested class definitions -->
+    <exclude-pattern type="relative">administrator/components/com_joomlaupdate/restore_finalisation.php</exclude-pattern>
+    <exclude-pattern type="relative">administrator/components/com_joomlaupdate/restore.php</exclude-pattern>
+    <exclude-pattern type="relative">configuration.php</exclude-pattern>
+    <exclude-pattern type="relative">installation/template/index.php</exclude-pattern>
+    <exclude-pattern type="relative">plugins/captcha/recaptcha/recaptchalib.php</exclude-pattern>
+    <!-- Exclude some test related files that don't actually include PHP code -->
+    <exclude-pattern type="relative">tests/unit/suites/libraries/joomla/model/stubs/barbaz.php</exclude-pattern>
+    <exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts1/fringe/division.php</exclude-pattern>
+    <exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts1/olivia.php</exclude-pattern>
+    <exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts1/peter.php</exclude-pattern>
+    <exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts2/fauxlivia.php</exclude-pattern>
+    <exclude-pattern type="relative">tests/unit/suites/libraries/joomla/view/layouts2/olivia.php</exclude-pattern>
+    <exclude-pattern type="relative">tests/unit/suites/libraries/legacy/controller/stubs/component1/controller.json.php</exclude-pattern>
+    <exclude-pattern type="relative">tests/unit/suites/libraries/legacy/controller/stubs/component2/controller.php</exclude-pattern>
+
+    <!-- Exclude the RoboFile.php -->
+    <exclude-pattern type="relative">RoboFile.php</exclude-pattern>
+
+
 
     <rule ref="Joomla">
         <exclude name="Joomla.NamingConventions.ValidVariableName.ClassVarHasUnderscore"/>
@@ -25,5 +53,6 @@
         <exclude name="Joomla.NamingConventions.ValidFunctionName.MethodUnderscore"/>
         <exclude name="Joomla.NamingConventions.ValidVariableName.NotCamelCaps"/>
         <exclude name="Joomla.NamingConventions.ValidFunctionName.ScopeNotCamelCaps"/>
+        <exclude name="Generic.Files.LineEndings.InvalidEOLChar"/>
     </rule>
 </ruleset>
