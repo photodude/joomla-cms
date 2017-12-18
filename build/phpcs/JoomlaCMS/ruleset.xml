@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Joomla-CMS">
+<ruleset name="JoomlaCMS">
 
     <arg name="report" value="full"/>
     <arg name="tab-width" value="4"/>
