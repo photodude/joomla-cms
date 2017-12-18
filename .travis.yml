@@ -54,8 +54,7 @@ script:
   - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --config-set installed_paths libraries/vendor/joomla/coding-standards,build/phpcs/; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs -i; fi
   - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs --version; fi
-  - echo $TRAVIS_BUILD_DIR
-  - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs -v --standard=JoomlaCMS --extensions=php /home/travis/build/photodude/joomla-cms/; fi
+  - if [[ $RUN_PHPCS == "yes" ]]; then libraries/vendor/bin/phpcs -v --standard=JoomlaCMS --extensions=php $TRAVIS_BUILD_DIR; fi
 
 
 branches:
