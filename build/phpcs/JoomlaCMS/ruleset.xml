@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="JoomlaCMS">
 
-    <arg name="report" value="summary"/>
+    <arg name="report" value="full"/>
     <arg name="tab-width" value="4"/>
     <arg name="encoding" value="utf-8"/>
     <arg value="sp"/>
@@ -52,20 +52,20 @@
     <rule ref="Generic.Files.EndFileNewline">
         <!-- These exceptions are temporary for now, possibly permanent -->
         <exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
     </rule>
     <rule ref="Generic.Files.LineLength">
         <!-- These exceptions are temporary for now, possibly permanent -->
         <exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
-        <exclude-pattern type="relative">*/tests/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
+        <exclude-pattern type="relative">tests/*</exclude-pattern>
     </rule>
     <rule ref="Generic.Formatting.DisallowMultipleStatements">
         <exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
     </rule>
     <rule ref="Generic.WhiteSpace.DisallowSpaceIndent">
         <!-- These exceptions are temporary for now -->
@@ -88,41 +88,41 @@
 
     <rule ref="Squiz.WhiteSpace.ScopeClosingBrace">
         <!-- These exceptions are temporary -->
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
         <exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
     </rule>
 
     <!-- Include some additional sniffs from the Zend standard -->
     <rule ref="Zend.Files.ClosingTag">
         <exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
     </rule>
 
     <rule ref="Joomla.Commenting.FileComment">
-        <exclude-pattern type="relative">*/tests/*</exclude-pattern>
+        <exclude-pattern type="relative">tests/*</exclude-pattern>
     </rule>
     <rule ref="Joomla.Commenting.FunctionComment">
         <!-- We only want this for libraries, language and cli for now -->
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
         <exclude-pattern type="relative">*/tests/*</exclude-pattern>
     </rule>
     <rule ref="Joomla.Commenting.SingleComment">
         <!-- We don't want this in mixed html/php views for now -->
         <exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
     </rule>
     <rule ref="Joomla.Commenting.ClassComment">
-        <exclude-pattern type="relative">*/tests/*</exclude-pattern>
+        <exclude-pattern type="relative">tests/*</exclude-pattern>
     </rule>
     <rule ref="Joomla.ControlStructures.ControlSignature">
         <!-- These exceptions are permanent -->
         <exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
-        <exclude-pattern type="relative">*/templates/*</exclude-pattern>
-        <exclude-pattern type="relative">*/layouts/*</exclude-pattern>
+        <exclude-pattern type="relative">templates/*</exclude-pattern>
+        <exclude-pattern type="relative">layouts/*</exclude-pattern>
     </rule>
 
     <rule ref="Joomla">
