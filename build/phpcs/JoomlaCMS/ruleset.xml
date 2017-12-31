@@ -6,6 +6,8 @@
 	<arg value="sp"/>
 
 	<!-- Exclude folders not containing production code -->
+	<exclude-pattern>*/build/*</exclude-pattern>
+	<exclude-pattern>*/lib/*</exclude-pattern>
 	<exclude-pattern type="relative">docs/*</exclude-pattern>
 	<exclude-pattern type="relative">cache/*</exclude-pattern>
 	<exclude-pattern type="relative">tmp/*</exclude-pattern>
