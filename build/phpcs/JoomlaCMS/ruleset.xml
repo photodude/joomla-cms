@@ -193,6 +193,7 @@
 		<exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
+		<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
 	</rule>
 	<rule ref="PEAR.Functions.FunctionDeclaration">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
@@ -212,9 +213,6 @@
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
 		<exclude-pattern type="relative">installation/controller/install/database_backup.php</exclude-pattern>
 		<exclude-pattern type="relative">installation/controller/install/database_remove.php</exclude-pattern>
-	</rule>
-	<rule ref="PEAR">
-	<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
 	</rule>
 
 	<!-- Include some additional sniffs from the Squiz standard -->
