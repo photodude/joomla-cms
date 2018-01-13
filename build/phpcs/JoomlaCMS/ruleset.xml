@@ -213,6 +213,9 @@
 		<exclude-pattern type="relative">installation/controller/install/database_backup.php</exclude-pattern>
 		<exclude-pattern type="relative">installation/controller/install/database_remove.php</exclude-pattern>
 	</rule>
+	<rule ref="PEAR">
+	<exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
+	</rule>
 
 	<!-- Include some additional sniffs from the Squiz standard -->
 	<rule ref="Squiz.Commenting.BlockComment">
