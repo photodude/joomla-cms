@@ -200,6 +200,7 @@
 		<exclude-pattern type="relative">*/tmpl/*</exclude-pattern>
 		<exclude-pattern type="relative">templates/*</exclude-pattern>
 		<exclude-pattern type="relative">layouts/*</exclude-pattern>
+		<exclude name="PEAR.Functions.FunctionDeclaration.CloseBracketLine"/>
 	</rule>
 	<rule ref="PEAR.Functions.ValidDefaultValue">
 		<!-- These exceptions are temporary. Remove these exceptions as code style violations are fixed -->
